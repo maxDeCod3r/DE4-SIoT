@@ -1,0 +1,7 @@
+Adafruit-Blinka==5.9.1
+adafruit-circuitpython-busdevice==5.0.1
+adafruit-circuitpython-rfm69==2.1.0
+Adafruit-PlatformDetect==2.23.0
+Adafruit-PureIO==1.1.8
+RPi.GPIO==0.7.0
+Flask==1.1.2

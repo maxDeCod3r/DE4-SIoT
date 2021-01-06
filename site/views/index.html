@@ -1,0 +1,160 @@
+<html>
+
+<!--
+__________████████_____██████
+_________█░░░░░░░░██_██░░░░░░█
+________█░░░░░░░░░░░█░░░░░░░░░█
+_______█░░░░░░░███░░░█░░░░░░░░░█
+_______█░░░░███░░░███░█░░░████░█
+______█░░░██░░░░░░░░███░██░░░░██
+_____█░░░░░░░░░░░░░░░░░█░░░░░░░░███
+____█░░░░░░░░░░░░░██████░░░░░████░░█
+____█░░░░░░░░░█████░░░████░░██░░██░░█
+___██░░░░░░░███░░░░░░░░░░█░░░░░░░░███
+__█░░░░░░░░░░░░░░█████████░░█████████
+_█░░░░░░░░░░█████_████___████_█████___█
+_█░░░░░░░░░░█______█_███__█_____███_█___█
+█░░░░░░░░░░░░█___████_████____██_██████
+░░░░░░░░░░░░░█████████░░░████████░░░█
+░░░░░░░░░░░░░░░░█░░░░░█░░░░░░░░░░░░█
+░░░░░░░░░░░░░░░░░░░░██░░░░█░░░░░░██
+░░░░░░░░░░░░░░░░░░██░░░░░░░███████
+░░░░░░░░░░░░░░░░██░░░░░░░░░░█░░░░░█
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+░░░░░░░░░░░█████████░░░░░░░░░░░░░░██
+░░░░░░░░░░█▒▒▒▒▒▒▒▒███████████████▒▒█
+░░░░░░░░░█▒▒███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+░░░░░░░░░█▒▒▒▒▒▒▒▒▒█████████████████
+░░░░░░░░░░████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+░░░░░░░░░░░░░░░░░░██████████████████
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+▓██░░░░░░░░░░░░░░░░░░░░░░░░██
+▓▓▓███░░░░░░░░░░░░░░░░░░░░█
+▓▓▓▓▓▓███░░░░░░░░░░░░░░░██
+▓▓▓▓▓▓▓▓▓███████████████▓▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+Get out of my source code
+-->
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>IoT plant watering project</title>
+    <!-- <base href="https://weather.maxhunt.design/" target="_blank"> -->
+</head>
+
+<body>
+    <header>
+        <div class="in-development">PREVIEW - IN DEVELOPMENT</div>
+    </header>
+    <div class="page-container">
+        <div class="copyright-container">
+            <div class="copyright">
+                <div class="logo">
+                    <img src="media/logo.png" alt="logo">
+                </div>
+                <div class="copyright-text">
+                    © Max Hunt 2020
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            IoT Plant Watering Predictor
+        </div>
+        <div class="containers">
+            <div class="container first-row">
+                <div class="container-title">
+                    Aims
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="container first-row">
+                <div class="container-title">
+                    How it works
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="container title-row">
+                <div class="container-title">
+                    Real time collected data
+                </div>
+            </div>
+            <div class="container title-row empty"></div>
+            <div class="container chart_container">
+                <div id="temp_chart" class="chart"></div>
+            </div>
+            <div class="container">
+                <div class="container-title">
+                    Data overview
+                </div>
+                <p>
+                    Some important numbers...
+                    <br><br> TBD
+                </p>
+            </div>
+            <div class="container chart_container">
+                <div id="humidity_chart" class="chart"></div>
+            </div>
+            <div class="container chart_container">
+                <div id="wind_chart" class="chart"></div>
+            </div>
+            <div class="container chart_container">
+                <div id="rain_chart" class="chart"></div>
+            </div>
+            <div class="container chart_container">
+                <div id="cloud_chart" class="chart"></div>
+            </div>
+            <div class="container chart_container">
+                <div id="soil_temp__chart" class="chart"></div>
+            </div>
+            <div class="container chart_container">
+                <div id="soil_hmdt_chart" class="chart"></div>
+            </div>
+            <div class="container">
+                <div class="container-title">
+                    The plant watering index
+                </div>
+                <p>
+                    Info on the plant watering index...
+                    <br><br> TBR
+                </p>
+            </div>
+            <div class="container">
+                <div class="container-title">
+                    Predicted watering pattern
+                </div>
+                <p>
+                    Another chart with predicted watering pattern
+                    <br><br> TBC
+                </p>
+            </div>
+        </div>
+    </div>
+    <script defer src="js/main.js"></script>
+    <script src="js/fInit.js"></script>
+</body>
+
+</html>
