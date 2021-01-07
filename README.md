@@ -33,11 +33,11 @@ This approach hopes to reduce the overall water use by preventing excessive wate
   - `Dockerfile` Containerizing the application
   - `water_predictor.py` On demand, real time watering predictor script
 - `Diagrams/` Process and block diagrams
-  - `source/` Editable `.drawio` diagrams
-  - `Docker process diagram.png` Diagram of all processes running on all devices
-  - `Hardware block diagram.png` Block diagram of the project hardware
-  - `Main project diagram.png` Overall project system diagram
-  - `UML process diagram.png` UML diagram detailing software processes
+  - `source/*` Editable `.drawio` diagrams
+  - `Docker_process_diagram.png` Diagram of all processes running on all devices
+  - `Hardware_block_diagram.png` Block diagram of the project hardware
+  - `Main_project_diagram.png` Overall project system diagram
+  - `UML_process_diagram.png` UML diagram detailing software processes
 - `lora_nodes/` Scripts running on the Pi Zero nodes
   - `master/` Scripts running on the primary, internet connected Pi
     - `irrigator/` Daily watering module
@@ -89,3 +89,14 @@ This approach hopes to reduce the overall water use by preventing excessive wate
 ## Maintainers and Contributors
 
    Max Hunt: [me@maxhunt.design](mailto:me@maxhunt.design)
+
+## Appendix
+
+Hardware block diagram:
+![alt text](diagrams/Hardware_block_diagram.png)
+
+UML Diagram:
+![alt text](diagrams/UML_process_diagram.png)
+
+Docker process diagram: <br>
+![coming...](diagrams/Docker_process_diagram.png)
