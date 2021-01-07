@@ -3,7 +3,7 @@
 #### Reducing water waste by automatically dispensing lower bound water amounts, calculated using a ML Model using present weather data
 
 ## About
-This project aims to integrate hardware IoT sensors (some RPi Zero's with I2C probes) and Machine Learning (Deep-NN) to predict how much water a outdoor garden will need every day.
+This project aims to integrate hardware IoT sensors (some RPi Zero's with I2C probes) and a Deep Neural Network to predict how much water an outdoor garden will need every day.
 
 The ML Model uses the last 24hrs of collected weather data to make a prediction around mow much water needs to be dispensed to keep the plants alive.
 
