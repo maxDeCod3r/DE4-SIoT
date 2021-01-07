@@ -59,7 +59,7 @@ This approach hopes to reduce the overall water use by preventing excessive wate
   - `Firestore Dataset injector.ipynb` Interactive notebook for injecting new data into database (useful if something was missed during logging)
 - `site/*` Monitoring website, HTML+CSS+JS, hosted on Firebase
 - `.gitignore` Gitignore file preventing all my API keys from showing up online...
-- `README.md` See `README.md`
+- `README.md` See [README.md](README.md)
 
 </details>
 
