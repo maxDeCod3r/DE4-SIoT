@@ -26,6 +26,7 @@
     --text_color: grey;
     --title-color: #333333;
     --dev-background: red;
+    --black: black;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
     margin-right: auto;
     font-family: osl;
     max-width: 1300px;
-    padding: 1rem;
+    padding: 0.2rem;
     color: var(--text_color);
 }
 
@@ -94,12 +95,21 @@ body {
     text-align: center;
     font-size: 45px;
     color: var(--title-color);
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.subtitle {
+    font-family: osb;
+    text-align: left;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--title-color);
     padding-bottom: 20px;
-    padding-top: 10px;
 }
 
 .first-row {
-    height: 600px;
+    height: 300px;
 }
 
 .title-row {
@@ -122,6 +132,27 @@ body {
     font-family: osb;
 }
 
+.repo-link {
+    padding: 2px 5px;
+    border: 2px solid var(--black);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    float: right;
+    margin-top: 40px;
+    margin-right: -240px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.repo-link:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transition: 0.3s;
+}
+
 @media (min-width: 900px) {
     .containers {
         grid-template-columns: repeat(2, 1fr);
@@ -142,6 +173,8 @@ body {
         --text_color: rgb(252, 252, 252);
         --title-color: #ebebeb;
         --dev-background: rgb(0, 89, 255);
+        --black: white;
+        --white: black
     }
 }
 

@@ -10,12 +10,14 @@ var datetimes = []
 var formatted_datetimes = []
 var test_1 = [1, 2, 3, 4, 5, 6, 7]
 var test_2 = [1, 2, 3, 4, 5, 6, 7]
+let data_lim = 2
+    // let data_lim = 240
 
 async function get_all_data() {
     let database = firebase.firestore()
     let weather_data = database.collection("weather_data")
     console.log("Waiting for data...");
-    var data_snapshot = await weather_data.orderBy("timestamp", "asc").get()
+    var data_snapshot = await weather_data.orderBy("timestamp", "desc").limit(data_lim).get()
     console.log("Got data, Processing...");
     data_snapshot.forEach((data_slice) => {
         var slice = data_slice.data()
@@ -39,6 +41,7 @@ function draw_graph(ySeries, names, colors, div_name) {
         y: ySeries.data,
         x: formatted_datetimes,
         text: names.title,
+        line: { shape: 'spline' },
         // marker: { color: colors.trace, line: { width: 3 } }
         marker: { color: colors.trace, line: { color: colors.trace, width: 3 } }
     }

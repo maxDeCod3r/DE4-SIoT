@@ -49,12 +49,12 @@ Get out of my source code
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>IoT plant watering project</title>
-    <!-- <base href="https://weather.maxhunt.design/" target="_blank"> -->
+    <!-- <base href="https://siot.maxhunt.design/" target="_blank"> -->
 </head>
 
 <body>
     <header>
-        <div class="in-development">PREVIEW - IN DEVELOPMENT</div>
+        <div class="in-development">PREVIEW - VERY MUCH IN DEVELOPMENT</div>
     </header>
     <div class="page-container">
         <div class="copyright-container">
@@ -66,9 +66,13 @@ Get out of my source code
                     © Max Hunt 2020
                 </div>
             </div>
+            <a href="https://github.com/maxDeCod3r/DE4-SIoT" target="_blank" class="repo-link">Project on GitHub</a>
         </div>
         <div class="title">
-            IoT Plant Watering Predictor
+            Sensing and IoT Plant Watering Predictor
+        </div>
+        <div class="subtitle"> Reducing water waste by automatically dispensing lower bound water amounts, calculated using a ML Model using present weather data
+
         </div>
         <div class="containers">
             <div class="container first-row">
@@ -76,12 +80,9 @@ Get out of my source code
                     Aims
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    This project aims to integrate hardware IoT sensors (some RPi Zero's with I2C probes) and a Deep Neural Network to predict how much water an outdoor garden will need every day.
+                    <br><br> The ML Model uses the last 24hrs of collected weather data to make a prediction around mow much water needs to be dispensed to keep the plants alive.
+                    <br><br> This approach hopes to reduce the overall water use by preventing excessive watering.
                 </p>
             </div>
             <div class="container first-row">
@@ -89,17 +90,12 @@ Get out of my source code
                     How it works
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    First, I will write the report,,,,,,,,, then this.
                 </p>
             </div>
             <div class="container title-row">
                 <div class="container-title">
-                    Real time collected data
+                    Real time collected data (last 10 days)
                 </div>
             </div>
             <div class="container title-row empty"></div>
@@ -111,8 +107,13 @@ Get out of my source code
                     Data overview
                 </div>
                 <p>
-                    Some important numbers...
-                    <br><br> TBD
+                    <i>Formatted:</i>
+                    <br><br>days of data recorded
+                    <br><br>max temp
+                    <br><br>min temp
+                    <br><br>air and soil
+                    <br><br>Server uptime
+                    <br><br>arbitrary amount of water saved
                 </p>
             </div>
             <div class="container chart_container">
@@ -135,20 +136,23 @@ Get out of my source code
             </div>
             <div class="container">
                 <div class="container-title">
-                    The plant watering index
+                    The plant watering index.
                 </div>
                 <p>
                     Info on the plant watering index...
-                    <br><br> TBR
-                </p>
+                    <br><br> - Relevant features.
+                    <br><br> - Equation with weights etc.
+                    <br><br> - Mention the ML model
+                    <br><br> - Diagram of model?
+                    <br><br> - States features
+                    <br><br> - Mention that hmdt was useless so we dropped it </p>
             </div>
             <div class="container">
                 <div class="container-title">
                     Predicted watering pattern
                 </div>
                 <p>
-                    Another chart with predicted watering pattern
-                    <br><br> TBC
+                    Beautifully represented values for today’s watering in ml and % delta from avg.
                 </p>
             </div>
         </div>
