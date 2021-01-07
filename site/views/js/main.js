@@ -10,8 +10,8 @@ var datetimes = []
 var formatted_datetimes = []
 var test_1 = [1, 2, 3, 4, 5, 6, 7]
 var test_2 = [1, 2, 3, 4, 5, 6, 7]
-let data_lim = 2
-    // let data_lim = 240
+    // let data_lim = 2
+let data_lim = 240
 
 async function get_all_data() {
     let database = firebase.firestore()
