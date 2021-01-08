@@ -103,5 +103,8 @@ Hardware block diagram:
 UML Diagram:
 ![alt text](diagrams/UML_process_diagram.png)
 
-Docker process diagram: <br>
-![coming...](diagrams/Docker_process_diagram.png)
+Docker process diagram:
+![alt text](diagrams/Docker_process_diagram.png)
+
+Satellite node:
+![alt text](diagrams/sat_node_picture.png)
