@@ -90,6 +90,11 @@ This approach hopes to reduce the overall water use by preventing excessive wate
 
    Max Hunt: [me@maxhunt.design](mailto:me@maxhunt.design)
 
+## External resources
+
+`Coming soon...`
+
+
 ## Appendix
 
 Hardware block diagram:
