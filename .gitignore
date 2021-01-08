@@ -146,9 +146,6 @@ dmypy.json
 # Icon must end with two \r
 Icon
 
-Icon\r
-
-Icon\r\r
 
 # Thumbnails
 ._*
@@ -168,3 +165,4 @@ Icon\r\r
 Network Trash Folder
 Temporary Items
 .apdisk
+Icon[]
