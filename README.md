@@ -78,11 +78,11 @@ This approach hopes to reduce the overall water use by preventing excessive wate
    - `satellite`: `docker build -t satellite .`
 8. *NOTE: The ML Dockerfile is very long and complicated because tensorflow does not play well with a 32 bit arm architecture, if you are building for x86 or arm64, you may need to change the file*
 9.  Run the docker containers:
-   - The `data_collector` on the cloud device: `docker run -d --restart always --name siot_weather_collector siot-weather-collector`
-   - The `data_processor` on the cloud device: `docker run -dp 3535:3535 --restart always --name siot_watering_predictor  siot-data-processor`
-   - The `master` on the master Pi: `docker run -dp 3333:3333 --privileged --restart always master-node`
-   - The `master/irrigator` on the master Pi: `docker run -d --privileged --restart always irrigator`
-   - The `satellite` on the sensor Pi: `docker run -d --privileged --restart always satellite`
+   - The `data_collector` on the cloud device: `docker run -d --restart=always --name siot_weather_collector siot-weather-collector`
+   - The `data_processor` on the cloud device: `docker run -dp 3535:3535 --restart=always --name siot_watering_predictor  siot-data-processor`
+   - The `master` on the master Pi: `docker run -dp 3333:3333 --privileged --restart=always master-node`
+   - The `master/irrigator` on the master Pi: `docker run -d --privileged --restart=always irrigator`
+   - The `satellite` on the sensor Pi: `docker run -d --privileged --restart=always satellite`
 10. While you are free to use my ML model included in this repo, I suggest you explore the `manual_data_processing` folder and create your own.
 11. You will also need at least 24hrs of data before the model can make predictions, so the `siot-weather-collector` image must be started at least 24hrs before the others
 
