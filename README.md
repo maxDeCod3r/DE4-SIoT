@@ -73,8 +73,8 @@ This approach hopes to reduce the overall water use by preventing excessive wate
 7. Build the docker images on the relevant architectures (for me everything was build on armv7)
    - `data_collector`: `docker build -t siot-weather-collector .`
    - `data_processor`: `docker build -t siot-data-processor .`
-   - `master/irrigator`: `docker build -t master-node .`
-   - `master`: `docker build -t irrigator .`
+   - `master`: `docker build -t master-node .`
+   - `master/irrigator`: `docker build -t irrigator .`
    - `satellite`: `docker build -t satellite .`
 8. *NOTE: The ML Dockerfile is very long and complicated because tensorflow does not play well with a 32 bit arm architecture, if you are building for x86 or arm64, you may need to change the file*
 9.  Run the docker containers:
