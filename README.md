@@ -88,11 +88,25 @@ This approach hopes to reduce the overall water use by preventing excessive wate
 
 ## Maintainers and Contributors
 
-   Max Hunt: [me@maxhunt.design](mailto:me@maxhunt.design)
+   Max Hunt: [me@maxhunt.design](mailto:me@maxhunt.design) <br><br>
 
 ## External resources
+[Docker](https://docs.docker.com) <br>
+[Nginx](https://nginx.org/en/docs/)<br>
+[ddclient](https://sourceforge.net/p/ddclient/wiki/Home/)<br>
+[Node](https://nodejs.org/en/docs/) <br>
+[Express](https://expressjs.com/en/5x/api.html)<br>
+[Raspberry Pi OS](https://www.raspberrypi.org/software/)
 
-`Coming soon...`
+Python:
+- [Requests](https://requests.readthedocs.io/en/master/api/)
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/api/)
+- [CircuitPython](https://circuitpython.readthedocs.io/en/6.0.x/README.html)
+- [RMF69](https://circuitpython.readthedocs.io/projects/rfm69/en/latest/api.html)
+- [MCP9808](https://circuitpython.readthedocs.io/projects/mcp9808/en/latest/)
+- [Firebase](https://firebase.google.com/docs/reference/admin/python)
+- [TensorFlow](https://www.tensorflow.org/api_docs)
+- [Keras](https://keras.io/api/)
 
 
 ## Appendix
