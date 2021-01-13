@@ -47,16 +47,16 @@ Get out of my source code
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>IoT plant watering project</title>
     <!-- <base href="https://siot.maxhunt.design/" target="_blank"> -->
+    <!-- <base href="http://127.0.0.1:5500/site/views/" target="_blank"> -->
+
 </head>
 
 <body>
-    <header>
-        <div class="in-development">PREVIEW - VERY MUCH IN DEVELOPMENT</div>
-    </header>
-    <div class="page-container">
+    <div class="page-container" name="top">
         <div class="copyright-container">
             <div class="copyright">
                 <div class="logo">
@@ -90,7 +90,11 @@ Get out of my source code
                     How it works
                 </div>
                 <p>
-                    First, I will write the report,,,,,,,,, then this.
+                    The project uses three <a class="link" target="_blank" href="https://www.raspberrypi.org/products/raspberry-pi-zero-w/">Raspberry Pi’s</a> in <a class="link" href="https://github.com/maxDeCod3r/DE4-SIoT/blob/main/diagrams/Main_project_diagram.png"
+                        target="_blank">this</a> configuration to collect and store data. The Master and Satellite Pi nodes are in charge of collecting local garden data. The internet enabled master Pi runs an http server and collects data from the distant
+                    satellite Pi via a <a class="link" target="_blank" href="https://lora-alliance.org">LoRa</a> command to return to the client. The DC Pi runs API calls every 60 minutes to the <a class="link" target="_blank" href="https://openweathermap.org/current">OpenWeather API</a>                    and the master Pi to collect air temp and humidity, rain, wind, cloud and soil temp and humidity.
+                    <br><br> Every 24 hours, the master Pi requests the latest water prediction from the DC Pi, the DC Pi uses the latest collected data and a trained Machine Learning model to predict the last day’s watering needs.
+                    <br><br> For more information on the process flow, visit this project’s <a class="link" href="https://github.com/maxDeCod3r/DE4-SIoT">GitHub page</a>.
                 </p>
             </div>
             <div class="container title-row">
@@ -106,18 +110,46 @@ Get out of my source code
                 <div class="container-title">
                     Data overview
                 </div>
-                <p>
-                    <i>Formatted:</i>
-                    <br><br>days of data recorded
-                    <br><br>max temp
-                    <br><br>min temp
-                    <br><br>air and soil
-                    <br><br>Server uptime
-                    <br><br>arbitrary amount of water saved
-                </p>
+                <div class="metrics">
+                    <div class="gap-top"></div>
+                    <div class="metric">
+                        <div class="big-metric" id="hrs">X</div>
+                        <div class="desc-metric" style="font-size: 27px; bottom: 5px;">Hours recorded</div>
+                    </div>
+                    <div class="metric">
+                        <div class="box gauge">
+                            <div class="mask">
+                                <div class="semi-circle"></div>
+                                <div class="semi-circle--mask" id="gauge_mask"></div>
+                            </div>
+                            <div class="gauge-text" id="bias_pct">+100%</div>
+                        </div>
+                        <div class="desc-metric" style="font-size: 20px; bottom: 42px;">Today's watering index</div>
+                    </div>
+                    <div class="status">
+                        <div class="big-status" id="pred_alive">OK</div>
+                        <div class="desc-metric" style="font-size: 17px; bottom: -12px;">Predictor status</div>
+                    </div>
+                    <div class="gap-btm"></div>
+                    <div class="metric">
+                        <div class="big-metric" id="days">X</div>
+                        <div class="desc-metric" style="font-size: 29px; bottom: 10px;">Days of data</div>
+                    </div>
+                    <div class="metric">
+                        <div class="big-metric" id="s_temp">X</div>
+                        <div class="desc-metric" style="font-size: 23px; bottom: 5px;">Current soil temp</div>
+                    </div>
+                    <div class="status">
+                        <div class="big-status" id="probe_alive">OK</div>
+                        <div class="desc-metric" style="font-size: 20px; bottom: -7px;">Probe status</div>
+                    </div>
+                </div>
+
+
+
             </div>
             <div class="container chart_container">
-                <div id="humidity_chart" class="chart"></div>
+                <div id="humidity_chart" class="chart "></div>
             </div>
             <div class="container chart_container">
                 <div id="wind_chart" class="chart"></div>
@@ -139,22 +171,55 @@ Get out of my source code
                     The plant watering index.
                 </div>
                 <p>
-                    Info on the plant watering index...
-                    <br><br> - Relevant features.
-                    <br><br> - Equation with weights etc.
-                    <br><br> - Mention the ML model
-                    <br><br> - Diagram of model?
-                    <br><br> - States features
-                    <br><br> - Mention that hmdt was useless so we dropped it </p>
+                    The basic watering index can be calculated with a weighted equation considering all the factors affecting plant evapotranspiration we dropped soil humidity because the sensor was not working correctly: <br>
+                    <br>
+                    <div class="eqtn">
+                        \(watering\_bias = w_1air\_temp + w_2wind + w_3soil\_temp \\- w_4air\_hmdt - w_5cloud - w_6rain\)
+                    </div>
+                    <br> Balancing these weights is a challenging process, approaching basic linear regression, and not all relationships here are guaranteed to be linear!
+                    <br><br> Instead, a deep neural network was created in tensorflow to simplify training and account for any nonlinearities.
+                    <br><br> The model follows a simple sequential construction with two hidden layers of 14 and 7 neurons respectively. The model was trained until an acceptable MSE was obtained, then saved and loaded into the DC Pi predictor API.
+                    <br> <br>
+                </p>
             </div>
             <div class="container">
                 <div class="container-title">
                     Predicted watering pattern
                 </div>
-                <p>
-                    Beautifully represented values for today’s watering in ml and % delta from avg.
-                </p>
+                <div class="metrics">
+                    <div class="gap-top"></div>
+                    <div class="metric">
+                        <div class="big-metric">1m2</div>
+                        <div class="desc-metric" style="font-size: 27px; bottom: 5px;">Garden area</div>
+                    </div>
+                    <div class="metric">
+                        <div class="big-metric" style="font-size: 60px; top: 15%;">500ml</div>
+                        <div class="desc-metric" style="font-size: 23px; bottom: -19px;">Average water/m2</div>
+                    </div>
+                    <div class="status">
+                        <div class="big-status" style="color: cyan;">OK</div>
+                        <div class="desc-metric" style="font-size: 16px; bottom: -13px;">Freeze detection</div>
+                    </div>
+                    <div class="gap-btm"></div>
+                    <div class="metric">
+                        <div class="big-metric" id="bias_dec">+0.1</div>
+                        <div class="desc-metric" style="font-size: 20px; bottom: -3px;">Current watering bias</div>
+                    </div>
+                    <div class="metric">
+                        <div class="big-metric" id="bias_ml" style="font-size: 60px; top: 15%;">550ml</div>
+                        <div class="desc-metric" style="font-size: 21px; bottom: -22px;">Today's watering vol</div>
+                    </div>
+                    <div class="status">
+                        <div class="big-status" style="font-size: 40px; top: 20%;">GOOD</div>
+                        <div class="desc-metric" style="font-size: 20px; bottom: -50px;">Plant health</div>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="back-to-top">
+            <a onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;">
+            ↑ Back to top ↑
+            </a>
         </div>
     </div>
     <script defer src="js/main.js"></script>

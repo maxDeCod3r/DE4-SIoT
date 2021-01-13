@@ -101,6 +101,86 @@ function createGraph_2() {
 plot_graphs();
 
 
+function changeGauge(val) {
+    const gaugeElement = document.querySelector(".semi-circle--mask");
+    gaugeElement.style["-webkit-transform"] = "rotate(" + val + "deg) translate3d(0, 0, 0)";
+    gaugeElement.style["-moz-transform"] = "rotate(" + val + "deg) translate3d(0, 0, 0);";
+    gaugeElement.style["transform"] = "rotate(" + val + "deg) translate3d(0, 0, 0);";
+}
+
+function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false); // false for synchronous request
+    xmlHttp.send(null);
+    return xmlHttp.responseText;
+}
+
+function get_var_data() {
+    var parsed = 0
+    var parsed_2 = 0
+    var water = 0
+    var int_water = 0
+    var testing = false
+    var water_bias = 0
+    var water_pct = 0
+    var g_angle = 0
+    var temp = 0
+    var start_timestamp = 1603119000.4791155
+    var now = Math.floor(Date.now() / 1000)
+    var seconds_elapsed = 0
+    var hours_elapsed = 0
+    var days_elapsed = 0
+    if (!testing) {
+        rsp_water = httpGet("https://api.maxhunt.design/water")
+        parsed = JSON.parse(rsp_water)
+        water = parsed.value
+
+        rsp_temp = httpGet("https://ss.maxhunt.design/temp")
+        parsed_2 = JSON.parse(rsp_temp)
+        temp = parsed_2.value
+    } else {
+        water = 733
+        temp = 3.5
+    }
+    int_water = Number((water).toFixed(0));
+    water_bias = (water - 500) / 500
+    water_bias = Number((water_bias).toFixed(3))
+    water_pct = water_bias * 100
+    g_angle = (water_bias * 90) + 90
+
+    if (water_pct < 0) {
+        document.getElementById("bias_pct").innerHTML = water_pct + "%"
+        document.getElementById("bias_dec").innerHTML = water_bias
+    } else {
+        document.getElementById("bias_pct").innerHTML = "+" + water_pct + "%"
+        document.getElementById("bias_dec").innerHTML = "+" + water_bias
+    }
+    changeGauge(g_angle);
+    document.getElementById("bias_ml").innerHTML = int_water + "ml"
+    document.getElementById("s_temp").innerHTML = temp + "ºC"
+
+    seconds_elapsed = now - start_timestamp
+    hours_elapsed = Number((seconds_elapsed / 3600).toFixed(0))
+    days_elapsed = Number((hours_elapsed / 24).toFixed(0))
+    document.getElementById("hrs").innerHTML = hours_elapsed
+    document.getElementById("days").innerHTML = days_elapsed
+
+}
+
+function update_divs() {
+    document.getElementById("hrs").innerHTML = "9999"
+    document.getElementById("bias_pct").innerHTML = "-100%"
+    document.getElementById("pred_alive").innerHTML = "Ye"
+    document.getElementById("days").innerHTML = "75"
+    document.getElementById("s_temp").innerHTML = "5ºC"
+    document.getElementById("probe_alive").innerHTML = "Ye"
+    document.getElementById("bias_dec").innerHTML = "+0.59"
+    document.getElementById("bias_ml").innerHTML = "750ml"
+}
+
+get_var_data();
+
+
 
 // var counter = 0
 // logRef.onSnapshot(function(querySnapshot) {
