@@ -95,6 +95,7 @@ This approach hopes to reduce the overall water use by preventing excessive wate
 [Nginx](https://nginx.org/en/docs/)<br>
 [ddclient](https://sourceforge.net/p/ddclient/wiki/Home/)<br>
 [Node](https://nodejs.org/en/docs/) <br>
+[Plotly.js](https://plotly.com/javascript/reference/)<br>
 [Express](https://expressjs.com/en/5x/api.html)<br>
 [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 
