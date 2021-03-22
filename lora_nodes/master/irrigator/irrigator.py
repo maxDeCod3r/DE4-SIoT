@@ -79,7 +79,6 @@ class LoRa:
 
             if attempt > max_attempts or response:
                 waiting_for_response = False
-
         return response
 
 

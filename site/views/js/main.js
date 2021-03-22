@@ -145,7 +145,7 @@ function get_var_data() {
     int_water = Number((water).toFixed(0));
     water_bias = (water - 500) / 500
     water_bias = Number((water_bias).toFixed(3))
-    water_pct = water_bias * 100
+    water_pct = Number((water_bias * 100).toFixed(0))
     g_angle = (water_bias * 90) + 90
 
     if (water_pct < 0) {
